@@ -98,7 +98,7 @@ void Network_HS::processRequest(char *body, char *formData){
       responseBody+="<p>正在重连网络:</p><p><b>" + String(wifiData.ssid) + "</b></p>";
       responseBody+="<p>(等待" + String((homeSpan.wifiTimeCounter++)/1000) + "秒检查响应)</p>";
       responseBody+="<p>连接耗时" + String((alarmTimeOut-millis())/1000) + "秒.</p>";
-      responseBody+="<center><button onclick=\"document.location='/hotspot-detect.html'\">Cancel</button></center>";
+      responseBody+="<center><button onclick=\"document.location='/hotspot-detect.html'\">取消</button></center>";
       WiFi.begin(wifiData.ssid,wifiData.pwd);
       
     } else {
@@ -108,12 +108,10 @@ void Network_HS::processRequest(char *body, char *formData){
       responseBody+="<p>成功! 已连接到Wi-Fi:</p><p><b>" + String(wifiData.ssid) + "</b></p>";
 
       responseBody+="<form action=\"/save\" method=\"post\">"
-                    "<label for=\"code\">Setup Code:</label>"
-                    "<center><input size=\"32\" type=\"tel\" id=\"code\" name=\"code\" placeholder=\"12345678\" pattern=\"[0-9]{8}\" maxlength=8></center>"
-                    "<center><input style=\"font-size:300%\" type=\"submit\" value=\"SAVE Settings\"></center>"
+                    "<center><input style=\"font-size:300%\" type=\"submit\" value=\"保存设置\"></center>"
                     "</form>";
                     
-      responseBody+="<center><button style=\"font-size:300%\" onclick=\"document.location='/cancel'\">CANCEL Configuration</button></center>";
+      responseBody+="<center><button style=\"font-size:300%\" onclick=\"document.location='/cancel'\">取消配置</button></center>";
     }
   
   } else                                                                
@@ -128,7 +126,7 @@ void Network_HS::processRequest(char *body, char *formData){
     responseBody+="<p>确认指示灯双闪，输入Wi-Fi账户和密码.</p>"
                   "<form action=\"/configure\" method=\"post\">"
                   "<label for=\"ssid\">WiFi名称:</label>"
-                  "<center><input size=\"32\" list=\"network\" name=\"network\" placeholder=\"Choose or Type\" required maxlength=" + String(MAX_SSID) + "></center>"
+                  "<center><input size=\"32\" list=\"network\" name=\"network\" placeholder=\"选择或输入\" required maxlength=" + String(MAX_SSID) + "></center>"
                   "<datalist id=\"network\">";
 
     for(int i=0;i<numSSID;i++)
@@ -139,10 +137,10 @@ void Network_HS::processRequest(char *body, char *formData){
                   "<center><input size=\"32\" type=\"password\" id=\"pwd\" name=\"pwd\" required maxlength=" + String(MAX_PWD) + "></center>"
                   "<br><br>";
                   
-    responseBody+="<center><input style=\"font-size:300%\" type=\"submit\" value=\"SUBMIT\"></center>"
+    responseBody+="<center><input style=\"font-size:300%\" type=\"submit\" value=\"提交\"></center>"
                   "</form>";
 
-    responseBody+="<center><button style=\"font-size:300%\" onclick=\"document.location='/cancel'\">CANCEL Configuration</button></center>";                  
+    responseBody+="<center><button style=\"font-size:300%\" onclick=\"document.location='/cancel'\">取消配置</button></center>";                  
                   
   }
 
