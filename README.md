@@ -9,7 +9,7 @@ The project is an Arduino project. It uses the HomeSpan library.
 ### Device Configure
 
 SSID: Apple-LED  
-Password: 2345678
+Password: 12345678
 
 Device code: 466-37-726
 
