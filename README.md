@@ -154,3 +154,26 @@ void Network_HS::processRequest(char *body, char *formData){
 //////////////////////////////////////
 
 ```
+
+
+## User Guard
+
+To enter Device Configuration Mode, press and hold the Control Button for 3 seconds, at which point the Status LED should begin to flash rapidly (10 times per second). Upon releasing the button the device will switch into the Device Configuration Mode.
+
+Within Device Configuration Mode you can choose one of five possible Actions:
+
+Exit Device Configuration Mode.
+
+Reboot the device.
+
+Launch HomeSpan’s temporary WiFi network.
+
+Unpair the device from Apple HomeKit.
+
+Erase stored WiFi Credentials. 
+
+When the Device Configuration Mode is first started, the Status LED will blink once per second to indicate Action 1 has been selected. To select the Action 2, briefly press and release the Control Button. The Status LED will now exhibit a double-blink pattern with a one second pause between blinks, indicating Action 2 has been selected. Each press of the Control Button selects the next action and causes the Status LED to blink according to the Action number. Pressing the Control Button once you reach Action 5 brings the selection back to Action 1.
+
+To execute the selected Action press and hold the Control Button for 3 seconds, at which time the Status LED will begin to flash rapidly (10 times a second). Upon releasing the button HomeSpan will perform the Action selected, and the Status LED will change patterns to reflect the new state of the device after the Action has been taken.
+
+If no Action has been executed within 120 seconds (2 minutes) of starting the Device Configuration Mode, Action 1 is automatically executed and the Device Configuration Mode is exited.
