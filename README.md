@@ -2,7 +2,17 @@
 
 ## Arduino
 
+Version: 1.8.19
+
+Board - ESP32 Dev Module
+
+partition scheme -  2M APP/2M SPIFFS
+
 The project is an Arduino project. It uses the HomeSpan library.
+
+### HomeSpan
+
+Version: 2.1.1
 
 [HomeSpan](https://github.com/HomeSpan/HomeSpan)
 
