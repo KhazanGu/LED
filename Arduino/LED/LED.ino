@@ -8,24 +8,20 @@ void setup() {
   
   homeSpan.setApSSID("Apple-LED");
   homeSpan.setApPassword("12345678");
-  
-  homeSpan.setControlPin(19);
+
   homeSpan.setStatusPin(18);
+  homeSpan.setControlPin(19);
 
   homeSpan.enableAutoStartAP();
-  
-  homeSpan.begin(Category::Bridges,"HomeSpan Bridge");
 
- new SpanAccessory();  
-   new Service::AccessoryInformation();
-     new Characteristic::Identify(); 
+  homeSpan.begin(Category::Lighting,"LED");
 
- new SpanAccessory();                                                          
-   new Service::AccessoryInformation();
-     new Characteristic::Identify(); 
-     new Characteristic::Name("LED");
-   
-     new LED(14, 17);
+  new SpanAccessory();                                                          
+    new Service::AccessoryInformation();
+      new Characteristic::Identify(); 
+      new Characteristic::Name("LED");
+      
+    new LED(14, 17);
 
 }
 
