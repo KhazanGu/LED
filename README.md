@@ -21,7 +21,10 @@ Version: 2.1.1
 SSID: Apple-LED  
 Password: 12345678
 
-Device code: 466-37-726
+
+![defaultSetupCode](https://github.com/HomeSpan/HomeSpan/blob/master/docs/images/defaultSetupCode.png)
+
+defaultSetupCode: 466-37-726
 
 
 ### Custom Website

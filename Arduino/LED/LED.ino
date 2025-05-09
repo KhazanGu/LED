@@ -14,6 +14,8 @@ void setup() {
 
   homeSpan.enableAutoStartAP();
 
+  homeSpan.setStatusAutoOff(120);
+
   homeSpan.begin(Category::Lighting,"LED");
 
   new SpanAccessory();                                                          
